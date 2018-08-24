@@ -22,15 +22,19 @@ void printVectorPropulsores(vector<Propulsores*>);
 int main(){
     char ejecucion = 'y';
     int na,nb,nc;
+    vector<Piloto*> miVectorPiloto;
+    vector<Misiles*> miVectorMisil;
+    vector<Propulsores*> miVectorPropulsor;
+
     do{
         switch (menu()){
         case 1:{
             
-            vector<Piloto*> miVectorPiloto;
+            //vector<Piloto*> miVectorPiloto;
             cout<<"Ingrese la cantidad de Pilotos a agregar: ";
             cin>>na;
          	llenarVectorPiloto(miVectorPiloto,na);   
-         	printVectorPiloto(miVectorPiloto);        	
+         	        	
 
             break;
         }
@@ -39,6 +43,11 @@ int main(){
             break;
         }
         case 3:{
+
+            //vector<Misiles*> miVectorMisil;
+            cout<<"Ingrese la cantidad de Misiles a agregar: ";
+            cin>>nb;
+            llenarVectorMisiles(miVectorMisil,nb); 
             
             break;
         }
@@ -48,13 +57,26 @@ int main(){
         }
         case 5:{
 
+            //vector<Propulsores*> miVectorPropulsor;
+            cout<<"Ingrese la cantidad de Propulsores a agregar: ";
+            cin>>nc;
+            llenarVectorPropulsores(miVectorPropulsor,nb); 
+
         	break;
         }
         case 6:{
 
-        	break;
+            break;
         }
         case 7:{
+
+            printVectorPiloto(miVectorPiloto);
+            printVectorMisiles(miVectorMisil);
+            printVectorPropulsores(miVectorPropulsor);
+
+            break;
+        }
+        case 8:{
             ejecucion = 'n';
             cout<< "La ejecución ha finalizado " << endl;
             cout<< "****\\\\Buen dia//****" << endl;
@@ -78,7 +100,8 @@ int menu(){
     cout << "4. Eliminar Misil." << endl;
     cout << "5. Agregar Propulsor." << endl;
     cout << "6. Eliminar Propulsor." << endl;
-    cout << "7. Salir." << endl;
+    cout << "7. Imprimir Reporte." << endl;
+    cout << "8. Salir." << endl;
     cout << "Ingrese una opcion: ";
     cin >> opcion;
     cout<<"------------------------------------------------"<<endl;
