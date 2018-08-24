@@ -5,24 +5,24 @@ Misiles::Misiles(){
 
 }
 
-Misiles::Misiles(int pAlcance, int pRadio){
+Misiles::Misiles(double pAlcance, double pRadio){
 	Alcance = pAlcance;
 	Radio = pRadio;
 }
 
-int Misiles::getAlcance(){
+double Misiles::getAlcance(){
 	return Alcance;
 }
 
-void Misiles::setAlcance(int pAlcance){
+void Misiles::setAlcance(double pAlcance){
 	Alcance = pAlcance;
 }
 
-int Misiles::getRadio(){
+double Misiles::getRadio(){
 	return Radio;
 }
 
-void Misiles::setRadio(int pRadio){
+void Misiles::setRadio(double pRadio){
 	Radio = pRadio;
 }
 

@@ -1,6 +1,9 @@
 #ifndef PROPULSORES_H
 #define PROPULSORES_H
 
+#include <string>
+using namespace std;
+
 class Propulsores{
 	private:
 		string Letra;
@@ -16,6 +19,6 @@ class Propulsores{
 		int getNumero();
 		void setNumero(int);
 
-		~Misiles();
+		~Propulsores();
 };
 #endif

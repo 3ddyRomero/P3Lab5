@@ -4,6 +4,7 @@
 #include <ctime>
 
 #include <string>
+using namespace std;
 
 Propulsores::Propulsores(){
 

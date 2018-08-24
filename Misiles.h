@@ -3,16 +3,16 @@
 
 class Misiles{
 	private:
-		int Alcance, Radio;
+		double Alcance, Radio;
 	public:
 		Misiles();
-		Misiles(int,int);
+		Misiles(double, double);
 
-		int getAlcance();
-		void setAlcance(int);
+		double getAlcance();
+		void setAlcance(double);
 
-		int getRadio();
-		void setRadio(int);
+		double getRadio();
+		void setRadio(double);
 
 		~Misiles();
 };

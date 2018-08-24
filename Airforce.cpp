@@ -10,7 +10,14 @@ using namespace std;
 int menu();
 void llenarVectorPiloto(vector<Piloto*>&, int);
 void printVectorPiloto(vector<Piloto*>);
-void deleteContentsVectorPiloto(vector<Piloto*>&);
+
+void llenarVectorMisiles(vector<Misiles*>&, int);
+void printVectorMisiles(vector<Misiles*>);
+
+void llenarVectorPropulsores(vector<Propulsores*>&, int);
+void printVectorPropulsores(vector<Propulsores*>);
+
+//void deleteContentsVectorPiloto(vector<Piloto*>&);
 
 int main(){
     char ejecucion = 'y';
@@ -19,7 +26,7 @@ int main(){
         switch (menu()){
         case 1:{
             
-            vector<Plioto*> miVectorPiloto;
+            vector<Piloto*> miVectorPiloto;
             cout<<"Ingrese la cantidad de Pilotos a agregar: ";
             cin>>na;
          	llenarVectorPiloto(miVectorPiloto,na);   
@@ -79,7 +86,7 @@ int menu(){
 }
 
 void printVectorPiloto(vector<Piloto*> pVectorPiloto){
-	cout<<endl<<"Elementos del vector: "<<endl;
+	cout<<endl<<"*****Pilotos*****"<<endl;
 
 	for(int i=0;i<pVectorPiloto.size();i++){
 		cout<<"Nombre: "<<pVectorPiloto[i]->getNombre()<<endl
@@ -111,4 +118,54 @@ void llenarVectorPiloto(vector<Piloto*>& pVectorPiloto,int cantidadPilotos){
 	}
 
 
+}
+
+void printVectorMisiles(vector<Misiles*> pVectorMisiles){
+    cout<<endl<<"*****Misiles*****"<<endl;
+    for(int i=0;i<pVectorMisiles.size();i++){
+        cout<<"Alcance: "<<pVectorMisiles[i]->getAlcance()<<" metros."<<endl
+            <<"Radio de Destrución: "<<pVectorMisiles[i]->getRadio()<<" metros."<<endl;
+    }
+}
+
+
+//llenar el vector
+void llenarVectorMisiles(vector<Misiles*>& pVectorMisiles,int cantidadMisiles){
+    Misiles* misil;
+    double alcance, radio;
+    for(int i = 0;i<cantidadMisiles;i++){
+        misil = new Misiles();
+        cout<<"Ingrese el Alcance en metros: ";
+        cin>>alcance;
+        cout<<"Ingrese el Radio de Destrución en metros: ";
+        cin>>radio;
+            misil->setAlcance(alcance);
+            misil->setRadio(radio);   
+        pVectorMisiles.push_back(misil);
+    }
+}
+
+void printVectorPropulsores(vector<Propulsores*> pVectorPropulsores){
+    cout<<endl<<"*****Propulsores*****"<<endl;
+    for(int i=0;i<pVectorPropulsores.size();i++){
+        cout<<"Código Propulsor: "<<pVectorPropulsores[i]->getLetra()<<pVectorPropulsores[i]->getNumero()<<endl;
+    }
+}
+
+
+//llenar el vector
+void llenarVectorPropulsores(vector<Propulsores*>& pVectorPropulsores,int cantidadPropulsores){
+    Propulsores* propulsor;
+    string letra;
+    int num;
+    for(int i = 0;i<cantidadPropulsores;i++){
+        propulsor = new Propulsores();
+        cout<<"Ingrese la Letra del Código: ";
+        cin>>letra;
+        cout<<"Ingrese el Número del Código: ";
+        cin>>num;
+            propulsor->setLetra(letra);
+            propulsor->setNumero(num);   
+        pVectorPropulsores.push_back(propulsor);
+    }
 }

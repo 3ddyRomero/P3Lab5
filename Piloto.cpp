@@ -24,7 +24,7 @@ int Piloto::getEdad(){
 	return Edad;
 }
 
-void Piloto::setNombre(int pEdad){
+void Piloto::setEdad(int pEdad){
 	Edad = pEdad;
 }
 
@@ -32,7 +32,7 @@ int Piloto::getExperiencia(){
 	return Experiencia;
 }
 
-void Piloto::setNombre(int pExperiencia){
+void Piloto::setExperiencia(int pExperiencia){
 	Experiencia = pExperiencia;
 }
 
