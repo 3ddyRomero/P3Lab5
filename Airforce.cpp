@@ -3,17 +3,28 @@
 #include "Propulsores.h"
 #include <iostream>
 #include <vector>
+#include <string>
 
 using namespace std;
 
 int menu();
+void llenarVectorPiloto(vector<Piloto*>&, int);
+void printVectorPiloto(vector<Piloto*>);
+void deleteContentsVectorPiloto(vector<Piloto*>&);
 
 int main(){
     char ejecucion = 'y';
+    int na,nb,nc;
     do{
         switch (menu()){
         case 1:{
             
+            vector<Plioto*> miVectorPiloto;
+            cout<<"Ingrese la cantidad de Pilotos a agregar: ";
+            cin>>na;
+         	llenarVectorPiloto(miVectorPiloto,na);   
+         	printVectorPiloto(miVectorPiloto);        	
+
             break;
         }
         case 2:{
@@ -36,12 +47,12 @@ int main(){
 
         	break;
         }
-        case 7:
+        case 7:{
             ejecucion = 'n';
             cout<< "La ejecución ha finalizado " << endl;
             cout<< "****\\\\Buen dia//****" << endl;
             break;
-
+        }
         } //end switch
     } while (ejecucion != 'n');
 
@@ -65,4 +76,39 @@ int menu(){
     cin >> opcion;
     cout<<"------------------------------------------------"<<endl;
     return opcion;
+}
+
+void printVectorPiloto(vector<Piloto*> pVectorPiloto){
+	cout<<endl<<"Elementos del vector: "<<endl;
+
+	for(int i=0;i<pVectorPiloto.size();i++){
+		cout<<"Nombre: "<<pVectorPiloto[i]->getNombre()<<endl
+		    <<"Edad: "<<pVectorPiloto[i]->getEdad()<<endl
+		    <<"Años de Experiencia: "<<pVectorPiloto[i]->getExperiencia()<<endl;
+	}
+}
+
+
+//llenar el vector
+void llenarVectorPiloto(vector<Piloto*>& pVectorPiloto,int cantidadPilotos){
+	Piloto* piloto;
+	string nombre;
+	int edad, expe;
+	for(int i = 0;i<cantidadPilotos;i++){
+		piloto = new Piloto();
+		cout<<"Ingrese el Nombre del Piloto: ";
+		cin>>nombre;
+		cout<<"Ingrese la Edad del Piloto: ";
+		cin>>edad;
+		cout<<"Ingrese los Años de Experiencia del Piloto: ";
+		cin>>expe;
+		
+			piloto->setNombre(nombre);
+	        piloto->setEdad(edad);
+       		piloto->setExperiencia(expe);
+		
+		pVectorPiloto.push_back(piloto);
+	}
+
+
 }
