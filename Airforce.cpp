@@ -80,7 +80,7 @@ int main(){
         	break;
         }
         case 6:{
-            
+
             printVectorPropulsores(miVectorPropulsor);
             cout<<"Ingrese la Posición a Eliminar: ";
             cin>>dc;
@@ -173,15 +173,16 @@ void llenarVectorMisiles(vector<Misiles*>& pVectorMisiles,int cantidadMisiles){
 void llenarVectorPropulsores(vector<Propulsores*>& pVectorPropulsores,int cantidadPropulsores){
     Propulsores* propulsor;
     string letra;
-    int num;
+    int num,potencia;
     for(int i = 0;i<cantidadPropulsores;i++){
         propulsor = new Propulsores();
         cout<<"Ingrese la Letra del Código: ";
         cin>>letra;
-        //cout<<"Ingrese el Número del Código: ";
-        //cin>>num;
+        cout<<"Ingrese la Potencia entre 30-50: ";
+        cin>>potencia;
             propulsor->setLetra(letra);
-            propulsor->setNumero(num);   
+            propulsor->setNumero(num); 
+            propulsor->setPotencia(potencia);  
         pVectorPropulsores.push_back(propulsor);
     }
 }
@@ -213,7 +214,8 @@ void printVectorPiloto(vector<Piloto*> pVectorPiloto){
 void printVectorPropulsores(vector<Propulsores*> pVectorPropulsores){
     cout<<endl<<"*****Propulsores*****"<<endl;
     for(int i=0;i<pVectorPropulsores.size();i++){
-        cout<<"Código Propulsor: "<<pVectorPropulsores[i]->getLetra()<<pVectorPropulsores[i]->getNumero()<<endl;
+        cout<<"Código Propulsor: "<<pVectorPropulsores[i]->getLetra()<<pVectorPropulsores[i]->getNumero()<<endl
+            <<"Potencia del Propulsor: "<<pVectorPropulsores[i]->getPotencia()<<endl;
     }
 }
 

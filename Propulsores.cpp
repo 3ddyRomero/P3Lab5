@@ -10,9 +10,10 @@ Propulsores::Propulsores(){
 
 }
 
-Propulsores::Propulsores(string pLetra, int pNumero){
+Propulsores::Propulsores(string pLetra, int pNumero, int pPotencia){
 	Letra = pLetra;
 	Numero = pNumero;
+	Potencia = pPotencia;
 }
 
 string Propulsores::getLetra(){
@@ -30,6 +31,14 @@ int Propulsores::getNumero(){
 
 void Propulsores::setNumero(int pNumero){
 	Numero = pNumero;
+}
+
+int Propulsores::getPotencia(){
+	return Potencia;
+}
+
+void Propulsores::setPotencia(int pPotencia){
+	Potencia = pPotencia;
 }
 
 Propulsores::~Propulsores(){
