@@ -90,6 +90,7 @@ int main(){
         }
         case 7:{
 
+            cout<<"----->Reporte de la Range Air Force<-----"<<endl;
             printVectorPiloto(miVectorPiloto);
             printVectorMisiles(miVectorMisil);
             printVectorPropulsores(miVectorPropulsor);
